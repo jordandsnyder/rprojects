@@ -1,0 +1,21 @@
+---
+title: "Playing With Scraping"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r loadlibraries}
+library(rvest)
+```
+
+```{r gather data}
+
+alexblog <- read_html("http://www.alexrecker.com")
+results <- alexblog %>% html_nodes(".short-desc")
+alexblog
+
+results
+```
