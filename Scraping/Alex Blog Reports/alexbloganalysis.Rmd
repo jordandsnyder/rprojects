@@ -1,0 +1,40 @@
+---
+title: "Alex Blog Analysis"
+output: html_notebook
+---
+
+I wish to do the following:
+
+1. Search Alex's blog.
+2. Download title and body for all entries.
+3. Organize into tibble.
+4. Conduct text analysis.
+  - by date
+  - emotions
+5. Set up Shiny Dashboard.
+6. Set up automated list.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r loadlibraries}
+library(rvest)
+library(tidyverse)
+```
+
+```{r read alexblog}
+alexentries <- read_html("https://www.alexrecker.com/entries.html")
+
+
+alexblog <- read_html("https://www.alexrecker.com/2021-04-17.html")
+
+header <- alexblog %>% html_elements("header")
+
+body <- alexblog %>% html_elements("p")
+
+test <- alexblog %>% 
+  read_html() %>%
+  html_element("title")
+
+```
