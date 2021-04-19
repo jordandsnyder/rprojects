@@ -5,14 +5,13 @@ output: html_notebook
 
 I wish to do the following:
 
-1. Search Alex's blog.
-2. Download title and body for all entries.
-3. Organize into tibble and clean.
-4. Conduct text analysis.
-  - by date
-  - emotions
-5. Set up Shiny Dashboard.
-6. Set up automated list.
+1. Download entries from my buddies blogs.
+2. Take the information and process/clean it into tidy text format.
+3. Analyze findings.
+
+In the future, I wish to add the following:
+a. Create a Shiny Interactive Dashboard.
+b. Create an automated email/update on a regular (e.g., weekly or monthly basis)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -24,56 +23,16 @@ library(tidyverse)
 ```
 
 ```{r read alexblog}
-#Get Entries into one data frame!
 
-#Input URL
-url <- "https://www.alexrecker.com/entries.html"
-mainURL <- "https://www.alexrecker.com"
-
-#Read URL
-html_document <- read_html(url)
-
-#Get Entry Links
-links <- html_document %>% 
-  html_nodes('td') %>% 
-  html_children() %>% 
-  html_attr('href')
-
-#put it all together
-allurls <- paste(mainURL, links, sep = "")
-
-#Create a Function to get date, title, and body from entries and return as one data frame
-scrape_alex_blog <- name <- function(url) {
-read_url_html <- read_html(url)
-
-date_text <- read_url_html %>% html_elements("h1") %>% html_text2()
-
-title_text <- read_url_html %>% html_elements("h2") %>% html_text2()
-
-body_text <- read_url_html %>% html_elements("body") %>% html_text2()
-
-
-  entry <- data.frame(
-    url = url,
-    date = date_text,
-    title = title_text,
-    body = body_text)
+if(!exists("all_entries"))
+   {
+  source("scripts/1 - download.R")
   
-  return(entry)
+} else {
+  
+  source("scripts/2 - load.R")
   
 }
-
-#iterate over all entries.
-all_entries <- data.frame()
-for (i in 1:length(allurls)) {
-  cat("Downloading", i, "of", length(allurls), "URL:", allurls[i], "\n")
-  entry <- scrape_alex_blog(allurls[i])
-  # Append current article data.frame to the data.frame of all articles
-  all_entries <- rbind(all_entries, entry)
-}
-
-#save text as data frame
-write.csv2(all_entries, file = "data/alex_blog.csv")
 
 ```
 
