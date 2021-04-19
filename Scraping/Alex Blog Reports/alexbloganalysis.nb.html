@@ -912,53 +912,15 @@ Downloading 653 of 653 URL: https://www.alexrecker.com/2019-07-02.html </code></
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5cbmRyaXZlciA8LSByZWFkX2h0bWwoXCJcIilcblxuc3ViVVJMcyA8LSBodG1sX25vZGVzKGRyaXZlciwndGQnKSAlPiUgXG4gICAgICAgICAgICBodG1sX2NoaWxkcmVuKCkgJT4lIFxuICAgICAgICAgICAgaHRtbF9hdHRyKCdocmVmJylcblxuYWxsdXJscyA8LSBwYXN0ZShtYWluVVJMLCBzdWJVUkxzLCBzZXAgPSBcIlwiKVxuXG5hbGx1cmxzXG5cblxuZm9yXG5cblxuXG5cblxuIyBUaGlzIGZ1bmN0aW9uIGZldGNoZXMgdGhvc2UgZm91ciBlbnRpdGllcyBhcyB5b3UgbGVhcm5lZCBpbiB0aGUgcHJldmlvdXMgc2VjdGlvbiBvZiB0aGlzIGd1aWRlXG5lbnRpdHkgPC0gZnVuY3Rpb24ocyl7XG4gIFxuICAjIENvdXJzZSBUaXRsZVxuICAjIFNpbmNlIE51bWJlciBvZiBDb3Vyc2VzIG1heSBkaWZmZXIgZnJvbSBTa2lsbCB0byBTa2lsbCwgdGhlcmVmb3JlLFxuICAjIHdlIGhhdmUgZG9uZSBkeW5hbWljIGZldGNoaW5nIG9mIHRoZSBjb3Vyc2UgbmFtZXNcbiAgXG4gIHN1YnRpdGxlIDwtIGh0bWxfbm9kZXMocywgXCJoMlwiKSAlPiVcbiAgICBodG1sX3RleHQoKSBcbiAgXG4gIGJvZHkgPC0gaHRtbF9ub2RlcyhzLCBcInBcIikgJT4lIGh0bWxfdGV4dCgpXG4gIFxuICByZXR1cm4odGV4dClcbn1cblxuXG4jIEEgZm9yIGxvb3Agd2hpY2ggZ29lcyB0aHJvdWdoIGFsbCB0aGUgVVJMcywgZmV0Y2ggdGhlIGVudGl0aWVzIGFuZCBkaXNwbGF5IHRoZW0gb24gdGhlIHNjcmVlbiBcbmkgPSAxXG5mb3IgKGkgaW4gMToxMCkge1xuICBzdWJEcml2ZXIgPC0gcmVhZF9odG1sKHBhc3RlKG1haW5VUkwsIHN1YlVSTHNbaV0sIHNlcCA9IFwiXCIpKVxuICBwcmludChlbnRpdHkoc3ViRHJpdmVyKSlcbn1cblxuXG5gYGAifQ== -->
-<pre class="r"><code>
-
-driver &lt;- read_html(&quot;&quot;)
-
-subURLs &lt;- html_nodes(driver,&#39;td&#39;) %&gt;% 
-            html_children() %&gt;% 
-            html_attr(&#39;href&#39;)
-
-allurls &lt;- paste(mainURL, subURLs, sep = &quot;&quot;)
-
-allurls
-
-
-for
-
-
-
-
-
-# This function fetches those four entities as you learned in the previous section of this guide
-entity &lt;- function(s){
-  
-  # Course Title
-  # Since Number of Courses may differ from Skill to Skill, therefore,
-  # we have done dynamic fetching of the course names
-  
-  subtitle &lt;- html_nodes(s, &quot;h2&quot;) %&gt;%
-    html_text() 
-  
-  body &lt;- html_nodes(s, &quot;p&quot;) %&gt;% html_text()
-  
-  return(text)
-}
-
-
-# A for loop which goes through all the URLs, fetch the entities and display them on the screen 
-i = 1
-for (i in 1:10) {
-  subDriver &lt;- read_html(paste(mainURL, subURLs[i], sep = &quot;&quot;))
-  print(entity(subDriver))
-}
-</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFsZXggQmxvZyBBbmFseXNpcyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCkkgd2lzaCB0byBkbyB0aGUgZm9sbG93aW5nOg0KDQoxLiBEb3dubG9hZCBlbnRyaWVzIGZyb20gbXkgYnVkZGllcyBibG9ncy4NCjIuIFRha2UgdGhlIGluZm9ybWF0aW9uIGFuZCBwcm9jZXNzL2NsZWFuIGl0IGludG8gdGlkeSB0ZXh0IGZvcm1hdC4NCjMuIEFuYWx5emUgZmluZGluZ3MuDQoNCkluIHRoZSBmdXR1cmUsIEkgd2lzaCB0byBhZGQgdGhlIGZvbGxvd2luZzoNCmEuIENyZWF0ZSBhIFNoaW55IEludGVyYWN0aXZlIERhc2hib2FyZC4NCmIuIENyZWF0ZSBhbiBhdXRvbWF0ZWQgZW1haWwvdXBkYXRlIG9uIGEgcmVndWxhciAoZS5nLiwgd2Vla2x5IG9yIG1vbnRobHkgYmFzaXMpDQoNCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQ0KYGBgDQoNCmBgYHtyIGxvYWRsaWJyYXJpZXN9DQpsaWJyYXJ5KHJ2ZXN0KQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpgYGANCg0KYGBge3IgcmVhZCBhbGV4YmxvZ30NCg0KaWYoIWV4aXN0cygiYWxsX2VudHJpZXMiKSkNCiAgIHsNCiAgc291cmNlKCJzY3JpcHRzLzEgLSBkb3dubG9hZC5SIikNCiAgDQp9IGVsc2Ugew0KICANCiAgc291cmNlKCJzY3JpcHRzLzIgLSBsb2FkLlIiKQ0KICANCn0NCg0KYGBgDQoNCmBgYHtyIG5ld30NCg0KDQpkcml2ZXIgPC0gcmVhZF9odG1sKCIiKQ0KDQpzdWJVUkxzIDwtIGh0bWxfbm9kZXMoZHJpdmVyLCd0ZCcpICU+JSANCiAgICAgICAgICAgIGh0bWxfY2hpbGRyZW4oKSAlPiUgDQogICAgICAgICAgICBodG1sX2F0dHIoJ2hyZWYnKQ0KDQphbGx1cmxzIDwtIHBhc3RlKG1haW5VUkwsIHN1YlVSTHMsIHNlcCA9ICIiKQ0KDQphbGx1cmxzDQoNCg0KZm9yDQoNCg0KDQoNCg0KIyBUaGlzIGZ1bmN0aW9uIGZldGNoZXMgdGhvc2UgZm91ciBlbnRpdGllcyBhcyB5b3UgbGVhcm5lZCBpbiB0aGUgcHJldmlvdXMgc2VjdGlvbiBvZiB0aGlzIGd1aWRlDQplbnRpdHkgPC0gZnVuY3Rpb24ocyl7DQogIA0KICAjIENvdXJzZSBUaXRsZQ0KICAjIFNpbmNlIE51bWJlciBvZiBDb3Vyc2VzIG1heSBkaWZmZXIgZnJvbSBTa2lsbCB0byBTa2lsbCwgdGhlcmVmb3JlLA0KICAjIHdlIGhhdmUgZG9uZSBkeW5hbWljIGZldGNoaW5nIG9mIHRoZSBjb3Vyc2UgbmFtZXMNCiAgDQogIHN1YnRpdGxlIDwtIGh0bWxfbm9kZXMocywgImgyIikgJT4lDQogICAgaHRtbF90ZXh0KCkgDQogIA0KICBib2R5IDwtIGh0bWxfbm9kZXMocywgInAiKSAlPiUgaHRtbF90ZXh0KCkNCiAgDQogIHJldHVybih0ZXh0KQ0KfQ0KDQoNCiMgQSBmb3IgbG9vcCB3aGljaCBnb2VzIHRocm91Z2ggYWxsIHRoZSBVUkxzLCBmZXRjaCB0aGUgZW50aXRpZXMgYW5kIGRpc3BsYXkgdGhlbSBvbiB0aGUgc2NyZWVuIA0KaSA9IDENCmZvciAoaSBpbiAxOjEwKSB7DQogIHN1YkRyaXZlciA8LSByZWFkX2h0bWwocGFzdGUobWFpblVSTCwgc3ViVVJMc1tpXSwgc2VwID0gIiIpKQ0KICBwcmludChlbnRpdHkoc3ViRHJpdmVyKSkNCn0NCg0KDQpgYGANCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFsZXggQmxvZyBBbmFseXNpcyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCkkgd2lzaCB0byBkbyB0aGUgZm9sbG93aW5nOg0KDQoxLiBEb3dubG9hZCBlbnRyaWVzIGZyb20gbXkgYnVkZGllcyBibG9ncy4NCjIuIFRha2UgdGhlIGluZm9ybWF0aW9uIGFuZCBwcm9jZXNzL2NsZWFuIGl0IGludG8gdGlkeSB0ZXh0IGZvcm1hdC4NCjMuIEFuYWx5emUgZmluZGluZ3MuDQoNCkluIHRoZSBmdXR1cmUsIEkgd2lzaCB0byBhZGQgdGhlIGZvbGxvd2luZzoNCmEuIENyZWF0ZSBhIFNoaW55IEludGVyYWN0aXZlIERhc2hib2FyZC4NCmIuIENyZWF0ZSBhbiBhdXRvbWF0ZWQgZW1haWwvdXBkYXRlIG9uIGEgcmVndWxhciAoZS5nLiwgd2Vla2x5IG9yIG1vbnRobHkgYmFzaXMpDQoNCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQ0KYGBgDQoNCmBgYHtyIGxvYWRsaWJyYXJpZXN9DQpsaWJyYXJ5KHJ2ZXN0KQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpsaWJyYXJ5KHRpZHl0ZXh0KQ0KYGBgDQoNCmBgYHtyIHJlYWQgYWxleGJsb2cgKGdvYWwgMSl9DQoNCmlmKCFleGlzdHMoImFsbF9lbnRyaWVzIikpDQogICB7DQogIHNvdXJjZSgic2NyaXB0cy8xIC0gZG93bmxvYWQuUiIpDQogIA0KfSBlbHNlIHsNCiAgDQogIHNvdXJjZSgic2NyaXB0cy8yIC0gbG9hZC5SIikNCiAgDQp9DQoNCmBgYA0KDQpgYGB7ciBjbGVhbiBhbGwgZW50cmllcyAoZ29hbCAyKSF9DQoNCg0KYGBgDQoNCmBgYHtyIGFuYWx5c2lzIChnb2FsIDMpfQ0KDQpgYGANCg0KDQo=</div>
 
 
 

@@ -20,9 +20,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r loadlibraries}
 library(rvest)
 library(tidyverse)
+library(tidytext)
 ```
 
-```{r read alexblog}
+```{r read alexblog (goal 1)}
 
 if(!exists("all_entries"))
    {
@@ -36,48 +37,13 @@ if(!exists("all_entries"))
 
 ```
 
-```{r new}
-
-
-driver <- read_html("")
-
-subURLs <- html_nodes(driver,'td') %>% 
-            html_children() %>% 
-            html_attr('href')
-
-allurls <- paste(mainURL, subURLs, sep = "")
-
-allurls
-
-
-for
-
-
-
-
-
-# This function fetches those four entities as you learned in the previous section of this guide
-entity <- function(s){
-  
-  # Course Title
-  # Since Number of Courses may differ from Skill to Skill, therefore,
-  # we have done dynamic fetching of the course names
-  
-  subtitle <- html_nodes(s, "h2") %>%
-    html_text() 
-  
-  body <- html_nodes(s, "p") %>% html_text()
-  
-  return(text)
-}
-
-
-# A for loop which goes through all the URLs, fetch the entities and display them on the screen 
-i = 1
-for (i in 1:10) {
-  subDriver <- read_html(paste(mainURL, subURLs[i], sep = ""))
-  print(entity(subDriver))
-}
+```{r clean all entries (goal 2)!}
 
 
 ```
+
+```{r analysis (goal 3)}
+
+```
+
+
